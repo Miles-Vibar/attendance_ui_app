@@ -35,6 +35,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.14
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,27 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
 
+  assets:
+    - assets/icons/trailing-icon.svg
+    - assets/icons/carbon_filter.svg
+    - assets/icons/carbon_home.svg
+    - assets/icons/carbon_menu.svg
+    - assets/icons/carbon_task.svg
+    - assets/icons/carbon_user-multiple.svg
+    - assets/icons/carbon_chart-line.svg
+    - assets/icons/clock.svg
+    - assets/icons/carbon_settings.svg
+    - assets/icons/close.svg
+    - assets/icons/compare.svg
+    - assets/icons/gps-off.svg
+    - assets/icons/image-broken.svg
+    - assets/icons/simple-line-icons_exclamation.svg
+    - assets/icons/smile.svg
+    - assets/icons/snooze.svg
+    - assets/icons/umbrella.svg
+    - assets/icons/next.svg
+    - assets/icons/question-mark.svg
+
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -88,6 +111,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
   fonts:
     - family: Poppins
       fonts:
