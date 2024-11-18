@@ -1,4 +1,5 @@
 import 'package:attendance_ui_app/widgets/attendance_list.dart';
+import 'package:attendance_ui_app/widgets/collasible_list.dart';
 import 'package:flutter/material.dart';
 
 class AttendancePage extends StatelessWidget {
@@ -127,7 +128,8 @@ class AttendancePage extends StatelessWidget {
               ],
             )
           ],
-        )
+        ),
+        const CollapsibleList(),
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:attendance_ui_app/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
@@ -17,39 +18,16 @@ class AttendanceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey[200]!,
-                blurRadius: 30,
-              )
-            ]),
-        child: Card(
-          elevation: 0,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
-          color: Theme.of(context).colorScheme.surfaceBright,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Heading(headingText: headingText),
-                const SizedBox(
-                  height: 8,
-                ),
-                Column(
-                  children: content,
-                )
-              ],
-            ),
-          ),
+    return CustomCard(
+      children: [
+        Heading(headingText: headingText),
+        const SizedBox(
+          height: 8,
         ),
-      ),
+        Column(
+          children: content,
+        )
+      ],
     );
   }
 }
@@ -170,7 +148,10 @@ class AttendanceListTileWithImage extends StatelessWidget {
         height: 68,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.network(image),
+          child: Image.network(
+            image,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
       title: SizedBox(
