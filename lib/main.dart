@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.blue,
-            primary: Colors.blue[500],
+            primary: const Color.fromRGBO(69, 132, 235, 1),
           ),
           useMaterial3: true,
           fontFamily: 'Poppins'),

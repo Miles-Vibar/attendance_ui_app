@@ -49,12 +49,12 @@ class _MainLayoutState extends State<MainLayout>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          Placeholder(),
+        children: [
+          const Placeholder(),
           AttendancePage(),
-          Placeholder(),
-          Placeholder(),
-          Placeholder(),
+          const Placeholder(),
+          const Placeholder(),
+          const Placeholder(),
         ],
       ),
       bottomNavigationBar: const BottomNavBar(),
