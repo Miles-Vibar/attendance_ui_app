@@ -73,25 +73,7 @@ flutter:
   # https://flutter.dev/to/asset-from-package
 
   assets:
-    - assets/icons/trailing-icon.svg
-    - assets/icons/carbon_filter.svg
-    - assets/icons/carbon_home.svg
-    - assets/icons/carbon_menu.svg
-    - assets/icons/carbon_task.svg
-    - assets/icons/carbon_user-multiple.svg
-    - assets/icons/carbon_chart-line.svg
-    - assets/icons/clock.svg
-    - assets/icons/carbon_settings.svg
-    - assets/icons/close.svg
-    - assets/icons/compare.svg
-    - assets/icons/gps-off.svg
-    - assets/icons/image-broken.svg
-    - assets/icons/simple-line-icons_exclamation.svg
-    - assets/icons/smile.svg
-    - assets/icons/snooze.svg
-    - assets/icons/umbrella.svg
-    - assets/icons/next.svg
-    - assets/icons/question-mark.svg
+    - assets/icons/
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

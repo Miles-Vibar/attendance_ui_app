@@ -1,3 +1,4 @@
+import 'package:attendance_ui_app/controllers/expansion_tile_controller.dart';
 import 'package:attendance_ui_app/data/overtime.dart';
 import 'package:attendance_ui_app/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,9 @@ import 'custom_line_chart.dart';
 import 'custom_expansion_tile.dart';
 
 class CollapsibleList extends StatelessWidget {
-  const CollapsibleList({super.key});
+  CollapsibleList({super.key});
+
+  final CustomExpansionTileController _controller = CustomExpansionTileController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +22,7 @@ class CollapsibleList extends StatelessWidget {
         CustomCard(
           children: [
             CustomExpansionTile(
+              controller: _controller,
               title: 'Time-In Trends',
               subtitleData: timeIns.last.y.toString(),
               subtitleText: 'people have timed in today',
@@ -36,6 +40,7 @@ class CollapsibleList extends StatelessWidget {
         CustomCard(
           children: [
             CustomExpansionTile(
+              controller: _controller,
               title: 'Late Trends',
               subtitleData: lateTrends.last.y.toString(),
               subtitleText: 'people are late today',
@@ -48,6 +53,7 @@ class CollapsibleList extends StatelessWidget {
         CustomCard(
           children: [
             CustomExpansionTile(
+              controller: _controller,
               title: 'Overtime Trends',
               subtitleData: '30 hrs',
               subtitleText: 'filed as overtime work',
