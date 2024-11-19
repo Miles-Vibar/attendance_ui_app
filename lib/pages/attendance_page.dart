@@ -2,6 +2,9 @@ import 'package:attendance_ui_app/widgets/attendance_list.dart';
 import 'package:attendance_ui_app/widgets/collasible_list.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/attendance_list_tile.dart';
+import '../widgets/attendance_list_tile_with_image.dart';
+
 class AttendancePage extends StatelessWidget {
   AttendancePage({super.key});
 

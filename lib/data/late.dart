@@ -10,7 +10,7 @@ class Late extends DataInterface {
   Late({required this.x, required this.y}) : super(x: x, y: y);
 }
 
-List<Late> get lates {
+List<Late> get lateTrends {
   final values = [30, 67, 54, 21, 27, 9, 15];
   return values
       .mapIndexed((index, value) => Late(x: week[index], y: value))

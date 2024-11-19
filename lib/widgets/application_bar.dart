@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 
+import 'application_bar_action_button.dart';
+
 class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
   const ApplicationBar({
     super.key,
@@ -71,26 +73,4 @@ class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(139);
-}
-
-class ApplicationBarActionButton extends StatelessWidget {
-  const ApplicationBarActionButton({
-    super.key,
-    required this.svg,
-  });
-
-  final String svg;
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return IconButton(
-      onPressed: () => (),
-      icon: SvgPicture.asset(
-        'assets/icons/$svg.svg',
-        width: 20,
-        height: 20,
-      ),
-    );
-  }
 }
