@@ -56,13 +56,16 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
     return ListenableBuilder(
       listenable: _controller,
       builder: (BuildContext context, Widget? child) {
-        SchedulerBinding.instance.addPostFrameCallback((_) => _controller.expanded ? _defaultController.expand() : _defaultController.collapse());
+        SchedulerBinding.instance.addPostFrameCallback((_) =>
+            _controller.expanded
+                ? _defaultController.expand()
+                : _defaultController.collapse());
         return ExpansionTile(
           initiallyExpanded: _controller.expanded,
           controller: _defaultController,
           shape: const Border(),
           visualDensity: const VisualDensity(vertical: -4),
-          tilePadding: EdgeInsets.zero,
+          tilePadding: const EdgeInsets.all(16.0),
           title: Row(
             children: [
               Text(
@@ -115,59 +118,65 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
             _controller.collapseOrExpand(value);
           },
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  children: [
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: widget.color,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: SvgPicture.asset(
-                          'assets/icons/${widget.svg}.svg',
-                          width: 20,
-                          height: 20,
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 16.0,
+                right: 16.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: widget.color,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: SvgPicture.asset(
+                            'assets/icons/${widget.svg}.svg',
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Text(
-                      widget.subtitleData,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Poppins',
-                        color: Color.fromRGBO(69, 79, 99, 1),
-                        fontSize: 32,
+                      const SizedBox(
+                        width: 8,
                       ),
-                    ),
-                  ],
-                ),
-                Text(
-                  widget.openedSubtitleText ?? widget.subtitleText,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'OpenSans',
-                    color: widget.color,
-                    fontSize: 10,
+                      Text(
+                        widget.subtitleData,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Poppins',
+                          color: Color.fromRGBO(69, 79, 99, 1),
+                          fontSize: 32,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                SizedBox(
-                  height: 178,
-                  child: widget.chart,
-                ),
-              ],
+                  Text(
+                    widget.openedSubtitleText ?? widget.subtitleText,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'OpenSans',
+                      color: widget.color,
+                      fontSize: 10,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  SizedBox(
+                    height: 178,
+                    child: widget.chart,
+                  ),
+                ],
+              ),
             ),
           ],
         );

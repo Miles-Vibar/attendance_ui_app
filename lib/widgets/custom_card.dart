@@ -28,11 +28,8 @@ class CustomCard extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
           color: Theme.of(context).colorScheme.surfaceBright,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: children,
-            ),
+          child: Column(
+            children: children,
           ),
         ),
       ),

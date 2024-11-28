@@ -1,3 +1,5 @@
+import 'package:attendance_ui_app/widgets/filter_bottom_sheet.dart';
+import 'package:attendance_ui_app/widgets/settings_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
@@ -63,9 +65,35 @@ class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
         tabAlignment: TabAlignment.start,
         labelColor: Theme.of(context).colorScheme.onSurface,
       ),
-      actions: const [
-        ApplicationBarActionButton(svg: 'carbon_filter'),
-        ApplicationBarActionButton(svg: 'carbon_settings'),
+      actions: [
+        ApplicationBarActionButton(
+          svg: 'carbon_filter',
+          function: () => showModalBottomSheet(
+            isScrollControlled: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+            ),
+            context: context,
+            builder: (BuildContext context) => const FilterBottomSheet(),
+          ),
+        ),
+        ApplicationBarActionButton(
+          svg: 'carbon_settings',
+          function: () => showModalBottomSheet(
+            isScrollControlled: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+            ),
+            context: context,
+            builder: (BuildContext context) => const SettingsBottomSheet(),
+          ),
+        ),
       ],
     );
   }
